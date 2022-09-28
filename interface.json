@@ -1,0 +1,51 @@
+{
+  "name": "my-cli",
+  "features": {
+    "stateful": false,
+    "streaming": false,
+    "version": 0
+  },
+  "version": "0.0.0",
+  "format": 1,
+  "wellknown": [],
+  "types": {
+    "Interactive": {
+      "type": "struct",
+      "name": "Interactive",
+      "fields": {
+        "stdin": {
+          "type": "bool"
+        },
+        "stdout": {
+          "type": "bool"
+        },
+        "stderr": {
+          "type": "bool"
+        }
+      }
+    }
+  },
+  "components": {
+    "cli": {
+      "name": "cli",
+      "inputs": {
+        "args": {
+          "type": "list",
+          "element": {
+            "type": "string"
+          }
+        },
+        "isInteractive": {
+          "type": "ref",
+          "ref": "#/types/Interactive"
+        }
+      },
+      "outputs": {
+        "code": {
+          "type": "u32"
+        }
+      }
+    }
+  },
+  "config": {}
+}

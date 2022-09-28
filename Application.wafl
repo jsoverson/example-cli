@@ -1,0 +1,11 @@
+name: "my-cli"
+version: "1.0.0"
+channels:
+  cli:
+    uses: "channels.wasmflow.cli@v1"
+    with:
+      location: "./build/my_cli.signed.wasm"
+      component: "cli"
+      link:
+        kind: "Manifest"
+        reference: "./flow.yaml"
